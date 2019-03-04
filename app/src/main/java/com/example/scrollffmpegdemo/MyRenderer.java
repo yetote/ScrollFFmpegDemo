@@ -33,6 +33,7 @@ public class MyRenderer implements GLSurfaceView.Renderer {
     private int[] textureArr;
     private Context context;
     private static final String TAG = "MyRenderer";
+
     public MyRenderer(Context context) {
         this.context = context;
     }
@@ -40,8 +41,9 @@ public class MyRenderer implements GLSurfaceView.Renderer {
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
         glClearColor(1, 1, 1, 0);
-        Log.e(TAG, "onSurfaceCreated: " );
+        Log.e(TAG, "onSurfaceCreated: ");
         playerObj = new PlayerObj();
+        textureArr = new int[3];
         playerProgram = new PlayerProgram(context);
         YUVHelper.loadTexture(textureArr);
     }
@@ -54,10 +56,10 @@ public class MyRenderer implements GLSurfaceView.Renderer {
     @Override
     public void onDrawFrame(GL10 gl) {
         glClear(GL_COLOR_BUFFER_BIT);
-        playerProgram.useProgram();
-        playerProgram.setUniform(textureArr);
-        playerObj.bindData(playerProgram);
-        playerObj.draw();
+//        playerProgram.useProgram();
+//        playerProgram.setUniform(textureArr);
+//        playerObj.bindData(playerProgram);
+//        playerObj.draw();
     }
 
 }

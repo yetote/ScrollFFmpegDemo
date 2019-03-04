@@ -93,7 +93,8 @@ add_library(
         SHARED
 
         native-lib.cpp
-        Decode.cpp)
+        Decode.cpp
+        CallBack.cpp)
 
 
 find_library(
